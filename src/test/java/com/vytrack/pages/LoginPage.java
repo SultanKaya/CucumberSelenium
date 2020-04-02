@@ -1,5 +1,6 @@
 package com.vytrack.pages;
 
+import com.vytrack.utilities.ConfigReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -29,7 +30,7 @@ public class LoginPage extends BasePage {
         //it's mandatory if you want to use @FindBy annotation
         //this means LoginPage class
         //Driver.get() return webdriver object
-        PageFactory.initElements(Driver.get(), this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     /**
@@ -47,22 +48,22 @@ public class LoginPage extends BasePage {
     }
 
     public void login() {
-        login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
+        login(ConfigReader.getKey("username"), ConfigReader.getKey("password"));
     }
 
     public void login(String role) {
         String userName = "";
-        String password = ConfigurationReader.getProperty("password");
+        String password = ConfigReader.getKey("password");
 
         switch (role) {
             case "driver":
-                userName = ConfigurationReader.getProperty("driver.username");
+                userName = ConfigReader.getKey("driver.username");
                 break;
             case "store manager":
-                userName = ConfigurationReader.getProperty("store.manager.username");
+                userName = ConfigReader.getKey("store.manager.username");
                 break;
             case "sales manager":
-                userName = ConfigurationReader.getProperty("sales.manager.username");
+                userName = ConfigReader.getKey("sales.manager.username");
                 break;
             default:
                 throw new RuntimeException("Invalid role!");
