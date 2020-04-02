@@ -40,7 +40,8 @@ Entire team participate sprint planning meeting to discuss stories for next spri
 
 Since everyone is looking into same requirements, there is gonna be less confusion during testing and development.
 
-In my project, PO was providing business requirements, then these requirements where written into use story with acceptance criteria. PO explains what feature team has to develop and how this feature should work.
+In my project, PO was providing business requirements, then these requirements where written into use story with acceptance criteria.
+PO explains what feature team has to develop and how this feature should work.
 
 Based on user story we create feature files to create tests.
 
@@ -100,7 +101,8 @@ public class CucumberRunner {
 }
 
 Once you click run, cucumber will generate step definitions. Every scenario consists of test steps.
-Every test step has a code implementation. Runner class will glue tests steps and step definitions. But, you need to tell runner class where you want to store step definitions.
+Every test step has a code implementation. Runner class will glue tests steps and step definitions.
+ But, you need to tell runner class where you want to store step definitions.
 
 
 
